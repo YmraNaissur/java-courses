@@ -6,7 +6,6 @@ public class Calculate {
 		
 		double first = Double.valueOf(args[0]);
 		double second = Double.valueOf(args[1]);
-		double result;
 		
 		// summarising
 		System.out.println("Summarising = " + calc.summ(first, second));
