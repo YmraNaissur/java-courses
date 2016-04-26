@@ -69,6 +69,8 @@ public class InteractRunner {
 			System.out.println("Exit? (yes / no): ");
 			runner.setExit(runner.yesOrNoRequest(runner.scanner));
 		}
+		
+		runner.closeScanner();
 	}
 	
 	/**
@@ -162,5 +164,13 @@ public class InteractRunner {
 		*	Returning created list
 		*/
 		return arguments;
+	}
+	
+	/**
+	*	Closing a scanner
+	*/
+	public void closeScanner() {
+		this.getScanner().close();
+		System.out.println("Scanner closed");
 	}
 }
