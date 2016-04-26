@@ -5,23 +5,61 @@ public class Calculator {
 	/**
 	*	Calculations' result
 	*/
-	private int result;
+	private Double result = new Double(0);
 	
 	/**
 	*	Summarising arguments
 	*	@param params Arguments of summarising
 	*/
-	public void add(int ... params) {
-		for (int i: params) {
-			result += i;
+	public void add(final Double ... params) {
+		double summ = 0;
+		for (Double i: params) {
+			summ += i;
 		}
+		result += summ;
+	}
+	
+	/**
+	*	Multiplying arguments
+	*	@param params Arguments for multiplication
+	*/
+	public void multi(final Double ... params) {
+		double mult = 1;
+		for (double i: params) {
+			mult *= i;
+		}
+		result += mult;
+	}
+	
+	/**
+	*	Dividing arguments
+	*	@param params Arguments for division
+	*/
+	public void div(final Double ... params) {
+		result += params[0] / params[1];
+	}
+	
+	/**
+	*	Subtraction arguments
+	*	@param params Arguments for subtraction
+	*/
+	public void sub(final Double ... params) {
+		result += params[0] - params[1];
+	}
+	
+	/**
+	*	Powering arguments
+	*	@param params Arguments for powering
+	*/
+	public void pow(final Double ... params) {
+		result += Math.pow(params[0], params[1]);
 	}
 	
 	/**
 	*	Getting the result of calculations
 	*	@return Calculation result
 	*/
-	public int getResult() {
+	public Double getResult() {
 		return result;
 	}
 
@@ -29,6 +67,6 @@ public class Calculator {
 	*	Clearing up the calculations' result
 	*/
 	public void cleanResult() {
-		result = 0;
+		result = new Double(0.0);
 	}
 }
